@@ -2,18 +2,6 @@
 
 Specification of the binary bitmap file (BBF) format. It is a simple raw data file format without compression for images. It was created by Benjamin Buch.
 
-## Data types
-
-The format stores a two-dimensional rectangular array of pixels. Each pixel can consist of up to 255 channels of the same data type. Permitted data types are:
-
-* boolean (8 bit)
-* un/signed integer 8 bit
-* un/signed integer 16 bit
-* un/signed integer 32 bit
-* un/signed integer 64 bit
-* floating point IEEE 754 32 bit
-* floating point IEEE 754 64 bit
-
 ## BBF signature
 
 The first four bytes of a BBF datastream always contain the following (hexadecimal) values:
@@ -29,6 +17,18 @@ The fifth byte is always the version. The version is a unsigned integer with 8 b
 ## BBF file format version `0x00`
 
 A version `0x00` BBF-File is devided into a header and a data section.
+
+### Data types
+
+The format stores a two-dimensional rectangular array of pixels. Each pixel can consist of up to 255 channels of the same data type. Permitted data types are:
+
+* boolean (8 bit)
+* un/signed integer 8 bit
+* un/signed integer 16 bit
+* un/signed integer 32 bit
+* un/signed integer 64 bit
+* floating point IEEE 754 32 bit
+* floating point IEEE 754 64 bit
 
 ### Header
 
