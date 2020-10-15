@@ -1,0 +1,17 @@
+markdown-links-verificator:
+  image: gitlab-registry.rz.tu-ilmenau.de/fakmb/qbv/topics/docker/tools/markdown-links-verificator:2020-10-13
+  script: markdown-links-verificator
+
+doc:
+  image: gitlab-registry.rz.tu-ilmenau.de/fakmb/qbv/topics/docker/tex-live:2020-10-12
+  script: script/doc.sh
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/*.pdf
+
+platin-mirror:
+  image: gitlab-registry.rz.tu-ilmenau.de/fakmb/qbv/topics/docker/platin-upload:latest
+  stage: deploy
+  cache: {}
+  variables: {GIT_STRATEGY: none}
+  script: mirror-to-platin
