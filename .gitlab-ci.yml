@@ -8,10 +8,3 @@ doc:
   artifacts:
     paths:
       - $CI_PROJECT_DIR/*.pdf
-
-platin-mirror:
-  image: gitlab-registry.rz.tu-ilmenau.de/fakmb/qbv/topics/docker/platin-upload:latest
-  stage: deploy
-  cache: {}
-  variables: {GIT_STRATEGY: none}
-  script: mirror-to-platin
